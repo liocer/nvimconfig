@@ -1,7 +1,26 @@
 local status_ok, treesitter = pcall(require, "nvim-treesitter.configs")
 if not status_ok then return end
 treesitter.setup(astronvim.user_plugin_opts("plugins.treesitter", {
-  ensure_installed = {},
+  ensure_installed = {
+    "astro",
+    "bash",
+    "comment",
+    "css",
+    "dockerfile",
+    "help",
+    "html",
+    "http",
+    "javascript",
+    "json",
+    "markdown",
+    "php",
+    "phpdoc",
+    "python",
+    "regex",
+    "scss",
+    "sql",
+    "svelte"
+  },
   sync_install = false,
   ignore_install = {},
   highlight = {
@@ -21,5 +40,5 @@ treesitter.setup(astronvim.user_plugin_opts("plugins.treesitter", {
   autopairs = { enable = true },
   autotag = { enable = true },
   incremental_selection = { enable = true },
-  indent = { enable = false },
+  indent = { enable = true },
 }))

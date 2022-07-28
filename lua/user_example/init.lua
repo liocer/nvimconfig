@@ -190,6 +190,12 @@ local config = {
     -- server_registration = function(server, opts)
     --   require("lspconfig")[server].setup(opts)
     -- end,
+    --
+
+    lspconfig.emmet_ls.setup({
+      capabilities = capabilities,
+      filetypes = { 'html', 'svelte' }
+    })
 
     -- Add overrides for LSP server settings, the keys are the name of the server
     ["server-settings"] = {

@@ -1,12 +1,14 @@
 local astro_plugins = {
   -- Plugin manager
   ["wbthomason/packer.nvim"] = {},
+  ["github/copilot.vim"] = {},
 
   -- Optimiser
   ["lewis6991/impatient.nvim"] = {},
 
   -- Lua functions
   ["nvim-lua/plenary.nvim"] = { module = "plenary" },
+
 
   -- Popup API
   ["nvim-lua/popup.nvim"] = {},
@@ -187,6 +189,14 @@ local astro_plugins = {
     config = function() require "configs.alpha" end,
   },
 
+  -- Distraction Free mode
+
+  ['folke/zen-mode.nvim'] = {
+    config = function() require("zen-mode").setup {  } end,
+  },
+
+
+
   -- Color highlighting
   ["norcalli/nvim-colorizer.lua"] = {
     event = { "BufRead", "BufNewFile" },
@@ -226,16 +236,19 @@ local astro_plugins = {
   },
 
   -- Smooth scrolling
-  ["declancm/cinnamon.nvim"] = {
-    event = { "BufRead", "BufNewFile" },
-    config = function() require "configs.cinnamon" end,
-  },
+--   ["declancm/cinnamon.nvim"] = {
+--     event = { "BufRead", "BufNewFile" },
+--     config = function() require "configs.cinnamon" end,
+--   },
 
   -- Smooth escaping
   ["max397574/better-escape.nvim"] = {
     event = "InsertCharPre",
     config = function() require "configs.better_escape" end,
   },
+
+  -- Colorschemes
+  ["marko-cerovac/material.nvim"] = {},
 
   -- Get extra JSON schemas
   ["b0o/SchemaStore.nvim"] = { module = "schemastore" },
